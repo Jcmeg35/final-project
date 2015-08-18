@@ -1,0 +1,2 @@
+module Characteristics2Helper
+end

@@ -9,14 +9,59 @@
 </head>
 <body>
 
-  <!-- Navbar --> 
+<!-- Navbar --> 
+  <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+     <!--  <img src="hippo_nav.svg"  style="height:100px;" 
+        style="width:100px;" alt="25" fill="white"/> -->
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"><a href="/dashboard">Dashboard</a></li>
+        <li class="nav-link"><a href="/explore">Explore</a></li>
+         <li class="nav-link"><a href="/add">Add</a></li>
+      </ul>
+    </nav>
+    
+    <div class="navigation-tools-login">
+    <% if user_signed_in? %>
 
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
+      <div class="navigation-tools">
+        <div class="search-bar">
+          <form role="search">
+            <input type="search" placeholder="Enter Search" />
+            <button type="submit">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+            </button>
+          </form>
+              <%= link_to('Logout', destroy_user_session_path, :class => "logout-link", :method => :delete) %>        
+      </div>
+
+          <% else %>          
+             <%= form_for(resource, as: resource_name, url:session_path(resource_name)) do |f| %>  
+        <div class="field">
+            <%= f.email_field :email, autofocus: true, :placeholder => "Email" %> 
+        </div>
+        <div class="field">
+            <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+          </div>
+        <div class="actions">
+          <%= f.submit "Log In", :class => "submitbutton"  %>
+          
+          <%= link_to('| Sign Up', new_user_registration_path,  :class => "Signup-link") %>
+
+        </div>
+    <% end %>
+    <%end%>
+
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <%= yield %>
 
