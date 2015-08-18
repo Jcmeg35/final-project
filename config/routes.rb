@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'home#index'
+  resources :users do
+  end
 
-  # get 'How It Works' => ''
+  resources :rfps do
+  end
+
+  resources :characterisitcs2 do
+  end
+  
+  root 'users#home'
+
+  get 'How It Works' => 'characterisitcs2#show'
 
 
 
