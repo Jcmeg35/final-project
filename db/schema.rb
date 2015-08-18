@@ -11,32 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817183757) do
+ActiveRecord::Schema.define(version: 20150818155317) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal  "price",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "rfp_id"
+    t.integer  "users_id"
   end
 
-  create_table "characteristics", force: :cascade do |t|
-    t.decimal "density",               null: false
-    t.decimal "viscosity",             null: false
-    t.integer "flash_point"
-    t.integer "pour_point"
-    t.decimal "sulfur",                null: false
-    t.integer "centane_index"
-    t.decimal "ash"
-    t.decimal "water"
-    t.integer "vandium"
-    t.integer "aluminum_plus_silicon"
-    t.integer "zinc"
-    t.integer "phosphorus"
-    t.integer "calcium"
+  create_table "characteristics2", force: :cascade do |t|
+    t.string   "type",                  null: false
+    t.string   "name",                  null: false
+    t.string   "unit"
+    t.string   "limit"
+    t.string   "test_method_reference"
+    t.integer  "value"
+    t.string   "appearance"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "commodity"
+    t.string  "commodity"
+    t.integer "characteristics"
   end
 
   create_table "rfps", force: :cascade do |t|
@@ -48,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150817183757) do
     t.integer  "contract_length"
     t.integer  "delivery_frequency"
     t.integer  "ship_size"
+    t.integer  "product_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
