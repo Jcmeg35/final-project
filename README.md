@@ -1,5 +1,7 @@
 == README
 
+This project is a platform that enables buyers, sellers, and brokers of physical petroleum based products to come together in one place and transact with one another.  A central location for the trade of these products enables enhanced discovery of product, pricing, and increasing liquidty for all participants.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
