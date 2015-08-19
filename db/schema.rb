@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818155317) do
+ActiveRecord::Schema.define(version: 20150819151239) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal  "price",      null: false
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150818155317) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "firs_name"
+    t.string   "first_name"
     t.string   "last_name"
     t.string   "company"
     t.string   "title"

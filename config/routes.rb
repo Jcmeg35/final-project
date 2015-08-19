@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  resources :users do
-  end
 
   resources :rfps do
   end
@@ -14,7 +10,9 @@ Rails.application.routes.draw do
 
   get 'How It Works' => 'characterisitcs2#show'
 
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
+  resources :users, only: [:index, :show, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
