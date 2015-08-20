@@ -1,0 +1,26 @@
+.signup-page-wrapper {
+  @include outer-container(50%);
+  .signup-header {
+  text-align: center;
+  margin-top: 26px;
+    } 
+  input {
+ 
+    }
+}
+
+.signup-wrapper {
+  @include span-columns(12);
+  input {
+    @include span-columns(5 of 12);
+  }
+  .divide2 input {
+    @include span-columns(6 of 12);
+    background-color: red;
+  }
+}
+
+#signup-button {
+
+}
+

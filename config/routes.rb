@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   
   root 'users#home'
 
+  get 'about' => 'characterisitcs2#show'
   get 'How It Works' => 'characterisitcs2#show'
+  get 'log in' => 'users#show'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
