@@ -32,7 +32,7 @@
 
     <div class="field">
 
-      <%= f.text_field :country, placeholder: "Country" %>
+      <%= f.country_select :country_code %>
     </div>  
 
      <div class="field">
@@ -56,22 +56,22 @@
     <br>
 
     <div class="field">
-      <%= f.email_field :email, placeholder: "Email" %>
+      <%= f.email_field :email, placeholder: "Email*" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password, placeholder: "Password (8 characters minimum)", autocomplete: "off" %>
+      <%= f.password_field :password, placeholder: "Password (8 characters minimum)*", autocomplete: "off" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation*", autocomplete: "off" %>
     </div>
   </div>
 
   
     <div id="signup-button">
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign Up" %>
       </div>
   <% end %>
 

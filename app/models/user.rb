@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :market_interest, presence: true
   validates :title, presence: true
 
-
+  attr_accessor :country_code
 
   has_many :rfps
   has_many :bids

@@ -6,15 +6,18 @@ Rails.application.routes.draw do
   resources :characterisitcs2 do
   end
   
+  devise_for :users, :controllers => { registrations: 'registrations' } 
+
+  resources :users, only: [:index, :show, :destroy] 
+
   root 'users#home'
 
   get 'about' => 'characterisitcs2#show'
   get 'How It Works' => 'characterisitcs2#show'
-  get 'log in' => 'users#show'
+  get 'login' => 'sessions#new'
+  
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :users, only: [:index, :show, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
