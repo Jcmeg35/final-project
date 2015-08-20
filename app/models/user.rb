@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :first_name, uniqueness: true, presence: true
   validates :last_name, uniqueness: true, presence: true
   validates :first_name, uniqueness: true, presence: true
-  validates :market_interest, presence: true
+  validates :market_position, presence: true
   validates :title, presence: true
 
   attr_accessor :country_code

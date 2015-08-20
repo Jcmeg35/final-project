@@ -13,21 +13,24 @@
  <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <a href="/" class="logo">
-      <img src="hippo_nav.svg"  style="height:100px;" 
-        style="width:100px;" alt="25" fill="white"/>
+      <img src="gasbp.png"  style="height:200px;" 
+        style="width:200px;" alt="Oil"/>
     </a>
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><a href="/How It Works">How It Works</a></li>
         <li class="nav-link"><a href="/about">About Us</a></li>
-        
+        <% if user_signed_in? %>
+          <li class="nav-link"><a href="/Market Deals">Market Deals</a></li>
+        <% else %>  
+
+        <% end %>
       </ul>
     </nav>
     
     <div class="navigation-tools-login">
     <% if user_signed_in? %>
-
 
       <div class="navigation-tools">
         <div class="search-bar">

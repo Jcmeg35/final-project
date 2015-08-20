@@ -10,11 +10,18 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :destroy] 
 
-  root 'users#home'
+  devise_scope :user do
+   get "signup", to: "devise/registrations#new"
+   get "login", to: "devise/sessions#new"
+   get "logout", to: "devise/sessions#destroy"
+  end
 
+  root 'users#home' 
+
+  get 'Market Deals' => 'rfps#show'
   get 'about' => 'characterisitcs2#show'
   get 'How It Works' => 'characterisitcs2#show'
-  get 'login' => 'sessions#new'
+  
   
 
 
