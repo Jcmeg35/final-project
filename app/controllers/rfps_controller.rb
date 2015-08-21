@@ -7,13 +7,13 @@ class RfpsController < ApplicationController
   def new
     @rfp = Rfp.new
     @product = Product.new
-     @characteristics2 = Characteristics2.new
+    @spec = Spec.new
   end
 
   def create
     @rfp = Rfp.new(rfp_params)
     @product = Product.new(product_params)
-    @characteristics2 = Characteristics2.new(characteristics2_params)
+    @spec = Spec.new(characteristics2_params)
   end
 
 end

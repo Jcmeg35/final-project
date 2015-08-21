@@ -12,9 +12,9 @@
   </div>
 
     <div class="price-field-wrapper">
-      <%= f.fields_for :rfps do |rfps_form| %>
+      <%= f.fields_for :product do |product_form| %>
         
-        <%= rfps.number_field :price, :required => true,  placeholder: "$10*" %>
+        <%= product.text_field :price, :required => true,  placeholder: "$10*" %>
       <h5 id="every"> every </h>
         <%= rfps.select(:month_interval, (0..12) ) %>
       <h5 id="month">months</h>
