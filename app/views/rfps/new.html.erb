@@ -1,35 +1,66 @@
 <div id="new-rfp-page-wrapper">
   
-  <h2 class="signup-header">Add Subscriptions</h2>
-
+  <h2 class="signup-header">Create New RFP</h2>
+  
   <div class="text-field-wrapper">
+
+    <h3 class="spec-header">RFP Information</h3>
+
     <%= form_for @rfp do |f| %>
       
-      <% f.label :Contract_Start_Date %>
-      <%= f.text_field :delivery_date, :required => true, placeholder: "Contracl Start Date*" %><br>
-      <%= f.text_field :category, :required => true, placeholder: "Category*" %><br>
-      <%= f.text_field :description, placeholder: "Product Description" %> <br>
-  </div>
+      <%= f.text_field :end_date, :required => true, placeholder: "RFP Ending Date (MM/DD/YYYY)*" %>
+      <%= f.text_field :order_size, :required => true, placeholder: "Cargo Size*" %>
+      <%= f.text_field :contract_length, :required => true, placeholder: "Term of Contract" %>
+      <%= f.text_field :delivery_frequency, :required => true, placeholder: "Number of Deliverys Over Contract Term*" %>
+      
+      <%= f.text_field :delivery_date, :required => true, placeholder: "Supply Start Date (MM/DD/YYYY)*"  %>
+  </div> <!-- end of text-field-wrapper -->
 
-    <div class="price-field-wrapper">
+  <div class="senior-spec-wrapper">
+      <h3 class="spec-header">Specification Information</h3>
+      
+     
       <%= f.fields_for :product do |product_form| %>
+      
+      <div id="spec-wrapper1">
+        <%= product_form.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
+      </div>
+
         
-        <%= product.text_field :price, :required => true,  placeholder: "$10*" %>
-      <h5 id="every"> every </h>
-        <%= rfps.select(:month_interval, (0..12) ) %>
-      <h5 id="month">months</h>
-    </div> 
+         <%= f.fields_for :spec do |spec_form| %>
+        
+      <div id="spec-wrapper2">
+        <%= spec_form.text_field :name, :required => true,  placeholder: "Characteristic (ex. Density, Viscosity, etc.)*" %>
+      </div>
+
+      <div id="spec-wrapper3">
+        <%= spec_form.text_field :unit, :required => true,  placeholder: "Unit (ex. kg/m3, ℃, etc.)*" %>
+      </div>
+
+      <div id="spec-wrapper4">
+        <%= spec_form.text_field :limit, :required => true,  placeholder: "max./min.*" %>
+      </div>
+
+      <div id="spec-wrapper5">
+        <%= spec_form.text_field :unit, :required => true,  placeholder: "Unit (ex. kg/m3, ℃, etc.)*" %>
+      </div>
+
+
+
+  </div> <!-- end of senior-spec-wrapper -->
 
   <div id="final-wrapper">
     <h5 id="required">*Required field</h>
     
       <div class="actions">
-       <%= f.submit "Add Subscription" %>
+       <%= f.submit "Create RFP" %>
       </div>
   
   </div> 
   
-    <% end %>
+        <% end %>
+
+      <% end %>
 
     <% end %>
 

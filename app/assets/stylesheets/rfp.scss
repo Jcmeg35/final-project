@@ -1,3 +1,71 @@
 // Place all the styles related to the RFP controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#new-rfp-page-wrapper {
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  .signup-header {
+  text-align: center;
+    } 
+  input::-webkit-input-placeholder {
+    font-size: 0.8em;
+    }
+}
+
+.text-field-wrapper {
+  width: 310px;
+  margin: 65px 0px 0px 100px;
+  display: inline-block;
+}
+
+.text-field-wrapper input {
+  width: 100%;
+  padding-right: 0px;
+}
+
+.spec-header {
+  text-align: center;
+}
+
+.senior-spec-wrapper {
+  width: 910px;
+  margin: 65px 0px 0px 50px;
+  display: inline-block;
+}
+
+#spec-wrapper1 {
+  display: inline-block;
+  width: 140px;
+}
+
+#spec-wrapper2 {
+  display: inline-block;
+  
+}
+
+#spec-wrapper3 {
+  display: inline-block;
+  width: 150px;
+}
+
+#spec-wrapper4 {
+  display: inline-block;
+  width: 80px;
+}
+
+#spec-wrapper5 {
+  display: inline-block;
+  width: 150px;
+}
+
+#final-wrapper {
+  margin-left: 575px;
+  #required {
+    font-weight: lighter;
+  }
+}
+
+
+
+
