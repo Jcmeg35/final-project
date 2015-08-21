@@ -1,0 +1,36 @@
+<div id="new-rfp-page-wrapper">
+  
+  <h2 class="signup-header">Add Subscriptions</h2>
+
+  <div class="text-field-wrapper">
+    <%= form_for @rfp do |f| %>
+      
+      <% f.label :Contract_Start_Date %>
+      <%= f.text_field :delivery_date, :required => true, placeholder: "Contracl Start Date*" %><br>
+      <%= f.text_field :category, :required => true, placeholder: "Category*" %><br>
+      <%= f.text_field :description, placeholder: "Product Description" %> <br>
+  </div>
+
+    <div class="price-field-wrapper">
+      <%= f.fields_for :rfps do |rfps_form| %>
+        
+        <%= rfps.number_field :price, :required => true,  placeholder: "$10*" %>
+      <h5 id="every"> every </h>
+        <%= rfps.select(:month_interval, (0..12) ) %>
+      <h5 id="month">months</h>
+    </div> 
+
+  <div id="final-wrapper">
+    <h5 id="required">*Required field</h>
+    
+      <div class="actions">
+       <%= f.submit "Add Subscription" %>
+      </div>
+  
+  </div> 
+  
+    <% end %>
+
+    <% end %>
+
+</div>

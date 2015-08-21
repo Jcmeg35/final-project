@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   root 'users#home' 
 
   get 'Market Deals' => 'rfps#show'
+  get 'Create RFP' => 'rfps#new'
   get 'about' => 'characterisitcs2#show'
   get 'How It Works' => 'characterisitcs2#show'
   
