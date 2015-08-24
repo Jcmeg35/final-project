@@ -7,7 +7,7 @@ class RfpsController < ApplicationController
   def new
     @rfp = Rfp.new
     @product = Product.new
-    @rfp.product = @product
+    @rfp.product_id = @product
     @spec = Spec.new
     @product.specs << @spec
   end

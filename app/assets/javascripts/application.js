@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-function add_forms(link, association, content) {
+function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).up().insert({
