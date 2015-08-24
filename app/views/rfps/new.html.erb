@@ -19,18 +19,18 @@
   <div class="senior-spec-wrapper">
       <h3 class="spec-header">Specification Information</h3>
       
-     
-      <%= f.fields_for :product do |product_form| %>
-      
-      <div id="spec-wrapper1">
-        <%= product_form.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
-      </div>
+      <%= f.fields_for :product do |builder| %>
 
+    <div id="forms">  
+
+      <div id="spec-wrapper1">
+        <%= builder.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
+      </div>
         
          <%= f.fields_for :spec do |spec_form| %>
         
       <div id="spec-wrapper2">
-        <%= spec_form.text_field :name, :required => true,  placeholder: "Characteristic (ex. Density, Viscosity, etc.)*" %>
+        <%= spec_form.text_field :name, :required => true,  placeholder: "Characteristic (ex. Sulfur, Density)*" %>
       </div>
 
       <div id="spec-wrapper3">
@@ -42,11 +42,18 @@
       </div>
 
       <div id="spec-wrapper5">
-        <%= spec_form.text_field :unit, :required => true,  placeholder: "Unit (ex. kg/m3, ℃, etc.)*" %>
+        <%= spec_form.text_field :value, :required => true,  placeholder: "Value (ex. 3.50)*" %>
+      </div>
+    
+      <div id="spec-wrapper6">
+        <%= spec_form.text_field :test_methdo_reference, :required => true,  placeholder: "Test Method (ex. ISO 3016)*" %>
       </div>
 
+      <p>
+        <%= link_to_add_forms "Add Forms", f, :specs %>
+      </p>
 
-
+    </div> <!-- end of forms div -->
   </div> <!-- end of senior-spec-wrapper -->
 
   <div id="final-wrapper">

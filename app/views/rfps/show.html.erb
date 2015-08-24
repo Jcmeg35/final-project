@@ -1,0 +1,23 @@
+<% title "Show RFP" %>
+
+<p>
+  <%=h @rfp.name %>
+</p>
+
+<ol>
+<% for product in @rfp.products %>
+  <li>
+    <%=h product.content %>
+    <ul>
+    <% for spec in product.specs %>
+      <li><%=h answer.content %></li>
+    <% end %>
+    </ul>
+  </li>
+<% end %>
+</ol>
+
+<p>
+  <% link_to "Edit", edit_rfp_path(@rfp) %> |
+  <% link_to "Destroy", @rfp, :confirm => 'Are you sure you want to delte RFP?', :method => : %> 
+</p>

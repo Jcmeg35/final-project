@@ -1,3 +1,3 @@
 class Spec < ActiveRecord::Base
-  belongs_to :products
+  belongs_to :product
 end

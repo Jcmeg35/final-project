@@ -24,15 +24,17 @@
   padding-right: 0px;
 }
 
+.senior-spec-wrapper {
+  width: 910px;
+  margin: 0px 0px 0px 50px;
+  display: inline-block;
+}
+
 .spec-header {
   text-align: center;
 }
 
-.senior-spec-wrapper {
-  width: 910px;
-  margin: 65px 0px 0px 50px;
-  display: inline-block;
-}
+
 
 #spec-wrapper1 {
   display: inline-block;
@@ -46,7 +48,7 @@
 
 #spec-wrapper3 {
   display: inline-block;
-  width: 150px;
+  width: 162px;
 }
 
 #spec-wrapper4 {
@@ -56,8 +58,14 @@
 
 #spec-wrapper5 {
   display: inline-block;
-  width: 150px;
+  width: 110px;
 }
+
+#spec-wrapper6 {
+  display: inline-block;
+  width: 174px;
+}
+
 
 #final-wrapper {
   margin-left: 575px;

@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
 
   attr_accessor :country_code
 
-  has_many :rfps
+  has_many :rfps 
   has_many :bids
 end
