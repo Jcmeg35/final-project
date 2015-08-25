@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :rfps do
   end
 
-  resources :characterisitcs2 do
+  resources :spec do
   end
   
   devise_for :users, :controllers => { registrations: 'registrations' } 
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 
   get 'Market Deals' => 'rfps#show'
   get 'Create RFP' => 'rfps#new'
-  get 'about' => 'characterisitcs2#show'
-  get 'How It Works' => 'characterisitcs2#show'
+  get 'About' => 'spec#show'
+  get 'How It Works' => 'spec#index'
   
   
 

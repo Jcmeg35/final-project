@@ -1,35 +1,41 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$parallax-window-height: 10em;
-$parallax-background-height: $parallax-window-height * 2;
 
-.parallax-window {
-  max-height: $parallax-window-height;
-  overflow: hidden;
+// Banner Image
+
+.image-gradient-dynamic {
+  
+  line-height: 0;
   position: relative;
-  text-align: center;
   width: 100%;
+
+  img {
+   z-index: -1; 
+   height: auto;
+   left: 0; 
+   position: relative;
+   top: 0px;
+   width: 100%;
+  }
+
+  .copy {
+    @include transform(translate(-50%, -50%));
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+
+    p {
+      color: white;
+      line-height: 1.5em;
+      padding: 1em 2em;
+      position: relative;
+    }
+  }
 }
 
-.parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
-  position: relative;
-  z-index: 9;
-}
-
-.parallax-background {
-  background: url("/banner-image1.jpg") ;
-  background-position: top;
-  background-size: cover;
-  background-color: beige;
-  height: $parallax-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-window-height / 3;
-  width: 100%;
-}
 
 // Based on http://codepen.io/skeurentjes/
 
@@ -44,7 +50,7 @@ $parallax-background-height: $parallax-window-height * 2;
   @include display(flex);
   @include flex-wrap(wrap);
   margin-bottom: $base-line-height;
-  margin: 1em;
+  margin: 4em;
   overflow: auto;
   padding: 0;
 
@@ -63,15 +69,15 @@ $parallax-background-height: $parallax-window-height * 2;
   }
 
   .bullet-icon-1 {
-    background: $action-color;
+    background: #f78f1e;
   }
 
   .bullet-icon-2 {
-    background: adjust-hue($action-color, -50%);
+    background: #4dbc8c;
   }
 
   .bullet-icon-3 {
-    background: adjust-hue($action-color, -140%);
+    background: #213440;
   }
 
   .bullet-content {

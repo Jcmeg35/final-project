@@ -16,8 +16,8 @@ header.navigation {
   $large-screen: em(860) !default;
   $navigation-padding: 1em;
   $navigation-background: $orange;
-  $navigation-color: #2a3440;
-  $navigation-color-hover: white;
+  $navigation-color: white;
+  $navigation-color-hover: black;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
@@ -39,6 +39,7 @@ header.navigation {
     @include outer-container;
     position: relative;
     z-index: 9999;
+    margin-left: 60px;
   }
 
   .logo {
@@ -283,8 +284,9 @@ header.navigation {
     min-height:300px;
 }
 a:link, a:visited {
-    color:#27b;
+    color: white;
     text-decoration:none;
+    font-weight: 400;
 }
 a:hover {
     text-decoration:underline;
@@ -351,6 +353,7 @@ a.signin.menu-open span {
     clear: both;
     display: inline-block;
     height: $navigation-height;
+    width: 120px;
 
     @include media($horizontal-bar-mode) {
       background: transparent;
