@@ -21,8 +21,6 @@
       
       <%= f.fields_for :product do |builder| %>
 
-    <div id="forms">  
-
       <div id="spec-wrapper1">
         <%= builder.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
       </div>
@@ -33,7 +31,7 @@
 
           <% end %>
   
-      <p><%= link_to_add_fields "Add Forms", f, :specs %></p>  
+      <p></p>  
 
     </div> <!-- end of forms div -->
   </div> <!-- end of senior-spec-wrapper -->
