@@ -1,4 +1,4 @@
-class Rfp < ActiveRecord::Base
+  class Rfp < ActiveRecord::Base
   belongs_to :user
   # has_many :bids
   belongs_to :product

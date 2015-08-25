@@ -25,7 +25,7 @@
         <%= builder.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
       </div>
 
-        <%= f.fields_for :spec do |builder| %>
+        <%= builder.fields_for :specs do |builder| %>
 
          <%= render 'spec_fields', :f => builder %>
 

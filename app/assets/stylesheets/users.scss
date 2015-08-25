@@ -1,7 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$parallax-window-height: 30em;
+$parallax-window-height: 10em;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -20,7 +20,7 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 .parallax-background {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
+  background: url("/banner-image1.jpg") ;
   background-position: top;
   background-size: cover;
   background-color: beige;

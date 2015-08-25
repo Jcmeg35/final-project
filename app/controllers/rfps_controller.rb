@@ -10,11 +10,8 @@ class RfpsController < ApplicationController
   end
 
   def create
-    @rfp = Rfp.new(params[:rfp])
-    @product = Product.new(params[:product])
-    @spec = Spec.new(params[:spec])
+    @rfp = Rfp.new(rfp_params)
     if @rfp.save
-      flash[:notice] = "Successfully created new RFP."
       redirect_to @rfp, alert: "RFP Successfully created"
     else 
       render :action => new
@@ -22,11 +19,21 @@ class RfpsController < ApplicationController
   end
 
   def show
-    @rfp = RFP.find(params[:id])
-    @product = Product.find(params[:id])
-    @spec = Spec.find(params[:id])
+    @rfp = Rfp.find(params[:id])
   end
 
+  private
+
+    def rfp_params
+      params.require(:rfp).permit(:end_date, :contract_length, :delivery_frequency, 
+                                  :delivery_date,
+                                  :product_attributes => [:commodity,
+                                                          :specs_attributes => [:name,
+                                                                                :limit,
+                                                                                :type,
+                                                                                :value,
+                                                                                :test_method_reference]])
+    end
 
 end
 
