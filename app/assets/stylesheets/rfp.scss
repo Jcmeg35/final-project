@@ -16,79 +16,70 @@
 }
 
 .text-field-wrapper {
+  input {
+    width: 90%;
+    padding-right: 0px;
+    border: 1px solid black;
+  }
   @include outer-container(100%);
   .rfp-table-wrapper{
+    margin-left: 260px; 
+    float: left;  
+    border: 1px solid black;
   @include outer-container(20%);
+    .spec-header {
+      text-align: center;
+    }
+    .rfp-table-wrapper{
+      @include span-columns(12);
+    }
+    .rfp-wrapper2 {
+      display: inline-block;
+      @include span-columns(6 of 12);
+    }
+    .rfp-wrapper2 {
+      display: inline-block;
+      @include span-columns(6 of 12);
+    }
+  } 
 
-  }
   .spec-table-wrapper{
-  @include outer-container(80%);
-  }
-}
-
-.text-field-wrapper input {
-  width: 100%;
-  padding-right: 0px;
-}
-
-.senior-spec-wrapper {
-  width: 910px;
-  margin: 0px 0px 0px 50px;
-  display: inline-block;
-}
-
-.spec-header {
-  text-align: center;
-}
-
-.spec-column-wrapper {
-  @include span-columns(12);
-  .spec-wrapper1 {
+    border: 1px solid black;
     display: inline-block;
-    
-    li.block {
-      @include span-columns(2 of 12);
+    width: 50%;
+    @include outer-container(50%);
+    margin-left: 20px;
+    .spec-header {
+      text-align: center;
     }
-  }
-
-  .spec-wrapper2 {
-    display: inline-block;
-    li.block {
-      @include span-columns(2 of 12);
+    .spec-table-wrapper{
+      @include span-columns(12);
     }
-  }
-
-  .spec-wrapper3 {
-    display: inline-block;
-  
-      li.block {
-      @include span-columns(2 of 12);
+    .spec-wrapper1 {
+      display: inline-block;
     }
-  }
-
-  .spec-wrapper4 {
-    display: inline-block;
-    
-    li.block {
-      @include span-columns(2 of 12);
+    .spec-wrapper2 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
     }
-  }
-
-  .spec-wrapper5 {
-    display: inline-block;
-    
-    li.block {
-      @include span-columns(2 of 12);
+    .spec-wrapper3 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
     }
-  }
-
-  .spec-wrapper6 {
-    display: inline-block;
-    
-    li.block {
-      @include span-columns(2 of 12);
+    .spec-wrapper4 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
     }
-  }
+    .spec-wrapper5 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
+    }
+    .spec-wrapper6 {
+      display: inline-block;
+      @include span-columns(4 of 12);
+      min-width: 180px;
+    }
+  }     
 }
 
 .final-wrapper {
@@ -99,14 +90,71 @@
 }
 
 //Show an RFP
-.rfp-show-lines {
-  font-weight: lighten;
-  width: 800px;
-  margin-right: 0px;
-}
+.text-field-wrapper {
+  input {
+    width: 90%;
+    padding-right: 0px;
+    border: 1px solid black;
+  }
+  @include outer-container(100%);
+  .rfp-table-wrapper{
+    margin-left: 260px; 
+    float: left;  
+    border: 1px solid black;
+  @include outer-container(20%);
+    .spec-header {
+      text-align: center;
+    }
+    .rfp-table-wrapper{
+      @include span-columns(12);
+    }
+    .rfp-wrapper2 {
+      display: inline-block;
+      @include span-columns(6 of 12);
+    }
+    .rfp-wrapper2 {
+      display: inline-block;
+      @include span-columns(6 of 12);
+    }
+  } 
 
-p {
-  width: 300px;
+  .spec-table-wrapper{
+    border: 1px solid black;
+    display: inline-block;
+    width: 50%;
+    @include outer-container(50%);
+    margin-left: 20px;
+    .spec-header {
+      text-align: center;
+    }
+    .spec-table-wrapper{
+      @include span-columns(12);
+    }
+    .spec-wrapper1 {
+      display: inline-block;
+    }
+    .spec-wrapper2 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
+    }
+    .spec-wrapper3 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
+    }
+    .spec-wrapper4 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
+    }
+    .spec-wrapper5 {
+      display: inline-block;
+      @include span-columns(1.5 of 12);
+    }
+    .spec-wrapper6 {
+      display: inline-block;
+      @include span-columns(4 of 12);
+      min-width: 180px;
+    }
+  }     
 }
 
 //Explore all RFPs
@@ -138,7 +186,6 @@ p {
     padding: 0 10px;
   }
 }
-
 
 .rfp-listing-wrapper {
   @include outer-container;

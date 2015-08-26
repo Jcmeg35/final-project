@@ -3,59 +3,68 @@
   <h2 class="signup-header"> Active RFP</h2>
 
   <div class="text-field-wrapper">
-
-    <h3 class="spec-header">RFP Information</h3>
-
-    <h4 class="rfp-show-lines">RFP End Date</h> <p><%= @rfp.end_date %></p>
-    <div class="field">
-      <%= @rfp.order_size %>
-    </div>      
-   
-    <div class="field">
-      <%= @rfp.contract_length %>
-    </div>
-    
-    <div class="field">
-      <%= @rfp.delivery_frequency %>
-    </div>
-    
-    <div class="field">  
-      <%= @rfp.delivery_date %>
-    </div>  
-    
-    <h3 class="spec-header">Specification Information</h3>
   
-    <div class="spec-column-wrapper">
-      <%= render "spec_show" %>
-      <br>
-      <div class="spec-wrapper1">
-        <%= @rfp.product.commodity %>
+    <div class="rfp-table-wrapper">  
+      <h3 class="spec-header">RFP Information</h3>
+      
+      <%= render "rfp_show" %>
+
+      <div class="rfp-wrapper1">
+        <%= @rfp.end_date %>
+      </div>     
+
+      <div class="rfp-wrapper1">
+        <%= @rfp.order_size %>
+      </div>      
+     
+      <div class="rfp-wrapper1">
+        <%= @rfp.contract_length %>
       </div>
+      
+      <div class="rfp-wrapper1">
+        <%= @rfp.delivery_frequency %>
+      </div>
+      
+      <div class="rfp-wrapper1">  
+        <%= @rfp.delivery_date %>
+      </div>  
+    </div>
 
-          <% for spec in @rfp.product.specs %>
-            <div class="spec-wrapper2">
-              <%= spec.name %>
-            </div>
+    <div class="spec-table-wrapper">  
+      <h3 class="spec-header">Specification Information</h3>
+      
+        
+          <%= render "spec_show" %>
+        <br>
 
-            <div class="spec-wrapper3">
-              <%= spec.unit %>
-            </div>
+        <div class="spec-wrapper1">
+          <%= @rfp.product.commodity %>
+        </div>
 
-            <div class="spec-wrapper4">
-              <%= spec.limit %>
-            </div>
+            <% for spec in @rfp.product.specs %>
+              <div class="spec-wrapper2">
+                <%= spec.name %>
+              </div>
 
-            <div class="spec-wrapper5">
-              <%= spec.value %>
-            </div>
+              <div class="spec-wrapper3">
+                <%= spec.unit %>
+              </div>
 
-            <div class="spec-wrapper6">
-              <%= spec.test_method_reference %>
-            </div>
+              <div class="spec-wrapper4">
+                <%= spec.limit %>
+              </div>
+
+              <div class="spec-wrapper5">
+                <%= spec.value %>
+              </div>
+
+              <div class="spec-wrapper6">
+                <%= spec.test_method_reference %>
+              </div>
 
           <% end %>
-    </div> <!-- end of text-field-wrapper -->
-  </div>
+          
+  </div><!-- end of text-field-wrapper -->
 </div>    
 
 <p>

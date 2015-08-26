@@ -22,4 +22,4 @@ $('#product_name').bind('railsAutocomplete.select', function(event, data){
   $('#product_name').submit(function(e) {
     e.preventDefault()
   });
-});
+
