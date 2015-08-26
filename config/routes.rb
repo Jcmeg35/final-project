@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   resources :rfps do
+    get :autocomplete_rfp_order_size, :on => :collection
   end
 
-  resources :spec do
+  resources :specs do
   end
   
   devise_for :users, :controllers => { registrations: 'registrations' } 
@@ -18,10 +19,12 @@ Rails.application.routes.draw do
 
   root 'users#home' 
 
-  get 'Market Deals' => 'rfps#show'
+  get 'How It Works' => 'specs#index'
+  get 'About' => 'specs#show'
+  get 'Market Deals' => 'rfps#index'
   get 'Create RFP' => 'rfps#new'
-  get 'About' => 'spec#show'
-  get 'How It Works' => 'spec#index'
+  
+  
   
   
 

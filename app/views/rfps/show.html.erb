@@ -1,20 +1,63 @@
-<title> "Show RFP"</title>
+<div class="rfp-page-wrapper">
 
-<p><%= @rfp.end_date %></p>
-<p><%= @rfp.order_size %></p>
-<p><%= @rfp.contract_length %></p>
-<p><%= @rfp.delivery_frequency %></p>
-<p><%= @rfp.delivery_date %></p>
+  <h2 class="signup-header"> Active RFP</h2>
 
-<p><%= @rfp.product.commodity %></p>
+  <div class="text-field-wrapper">
+
+    <h3 class="spec-header">RFP Information</h3>
+
+    <h4 class="rfp-show-lines">RFP End Date</h> <p><%= @rfp.end_date %></p>
+    <div class="field">
+      <%= @rfp.order_size %>
+    </div>      
+   
+    <div class="field">
+      <%= @rfp.contract_length %>
+    </div>
+    
+    <div class="field">
+      <%= @rfp.delivery_frequency %>
+    </div>
+    
+    <div class="field">  
+      <%= @rfp.delivery_date %>
+    </div>  
+
+  </div> <!-- end of text-field-wrapper -->
+    
+  <div class="senior-spec-wrapper">
+    <h3 class="spec-header">Specification Information</h3>
   
-  <ul>
-    <% for spec in @rfp.product.specs %>
-      <li><%= spec.name %></li>
-    <% end %>
-  </ul>
+    <div class="spec-wrapper1">
+      <%= @rfp.product.commodity %></p>
+    </div>
 
+      <ul>
+        <% for spec in @rfp.product.specs %>
+          <div class="spec-wrapper2">
+            <%= spec.name %>
+          </div>
 
+          <div class="spec-wrapper3">
+            <%= spec.unit %>
+          </div>
+
+          <div class="spec-wrapper4">
+            <%= spec.limit %>
+          </div>
+
+          <div class="spec-wrapper5">
+            <%= spec.test_method_reference %>
+          </div>
+
+          <div class="spec-wrapper6">
+            <%= spec.value %>
+          </div>
+
+        <% end %>
+      </ul>
+  </div>
+</div>    
 
 <p>
   <% link_to "Edit", edit_rfp_path(@rfp) %> |

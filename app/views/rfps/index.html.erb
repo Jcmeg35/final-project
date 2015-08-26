@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div id="explore_container">
+
+  <div class="listing_wrapper">
+    <div class="header-text">Search RFP's</div> 
+    <br>
+      <div id="autocomplete_wrapper">
+        <span> Search: </span>
+         <%= form_tag "/rfps", placeholder: 'Search', method: :get, id: "autocomplete" do %>
+          <%= autocomplete_field_tag :rfp_order_size, '', autocomplete_rfp_order_size_rfps_path %>
+        <% end %>
+      </div>
+
+  <div class="rfp-listing-wrapper">
+      
+      <% @rfps.each do |rfp| %>
+
+      <%= link_to rfp_path rfp do %>
+      
+      <% end %>
+      
+      <% end %>
+     
+      
+    
+  </div>
+  
+ 
+
+</div> <!-- End of Explore_container -->
+

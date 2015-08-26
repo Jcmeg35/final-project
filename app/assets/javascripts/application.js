@@ -15,10 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
-// function add_fields(link, association, content) {
-//   var new_id = new Date().getTime();
-//   var regexp = new RegExp("new_" + association, "g")
-//   $(link).up().insert({
-//     before: content.replace(regexp, new_id)
-//   });
-// }
+$('#product_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "/products?id=" + data.item.id;
+  });
+
+  $('#product_name').submit(function(e) {
+    e.preventDefault()
+  });
+});

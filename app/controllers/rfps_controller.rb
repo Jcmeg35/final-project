@@ -1,4 +1,18 @@
 class RfpsController < ApplicationController
+  # autocomplete :rfp, :order_size
+   
+
+  # def index
+  #   if params[:order_size]
+  #     @rfp = Rfp.where(order_size: params[:order_size]).paginate(page: params[:page], per_page: 30)
+  #   elsif params[:id]
+  #     @rfp = Rfp.where(id: params[:id]).paginate(page: params[:page], per_page: 30)
+  #   elsif params[:ship_size]
+  #     @rfp = Rfp.product.where(ship_size: params[:rfp_ship_size]).paginate(page: params[:page], per_page: 30)
+  #   else
+  #     @rfp = Rfp.paginate(page: params[:page], per_page: 30)
+  #   end
+  # end
 
   def new
     @rfp = Rfp.new

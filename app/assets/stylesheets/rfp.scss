@@ -1,7 +1,9 @@
 // Place all the styles related to the RFP controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#new-rfp-page-wrapper {
+
+//Create RFP Page
+.rfp-page-wrapper {
   padding: 10px;
   width: 100%;
   margin: 0 auto;
@@ -35,45 +37,145 @@
 }
 
 
-
-#spec-wrapper1 {
+.spec-wrapper1 {
   display: inline-block;
   width: 140px;
 }
 
-#spec-wrapper2 {
+.spec-wrapper2 {
   display: inline-block;
   
 }
 
-#spec-wrapper3 {
+.spec-wrapper3 {
   display: inline-block;
   width: 162px;
 }
 
-#spec-wrapper4 {
+.spec-wrapper4 {
   display: inline-block;
   width: 80px;
 }
 
-#spec-wrapper5 {
+.spec-wrapper5 {
   display: inline-block;
   width: 110px;
 }
 
-#spec-wrapper6 {
+.spec-wrapper6 {
   display: inline-block;
   width: 174px;
 }
 
 
-#final-wrapper {
+.final-wrapper {
   margin-left: 575px;
   #required {
     font-weight: lighter;
   }
 }
 
+//Show an RFP
+.rfp-show-lines {
+  font-weight: lighten;
+  width: 800px;
+  margin-right: 0px;
+}
+
+p {
+  width: 300px;
+}
+
+
+//Explore all RFPs
+
+.listing_wrapper {
+  @include span-columns(10);
+  @include omega();
+  @include shift(1);
+  padding-bottom: 40px;
+
+  .header-text {
+      font-size: 3em;
+      color: #477DCA;
+      font-weight: lighter;
+    }
+
+  ul {
+    text-align: center;
+    
+    li {
+    // padding-right: 18px;
+    display: inline-block;
+    }
+  }
+
+ li:not(:last-child):after {
+    content: "|";
+    display: inline-block;
+    padding: 0 10px;
+  }
+}
+
+
+.rfp-listing-wrapper {
+  @include outer-container;
+  
+  .column {
+    @include span-columns(4);
+  }
+  
+  .rfp:hover {
+    background-color: lightblue;
+  }
+  .rfp {
+    text-align: center;
+    height: 360px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    
+    .heading {
+      text-align: left;
+      height: 60px;
+      position: relative;
+
+      h2 {
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: -1px;
+      }
+
+      p {
+        padding-left: 10px;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: -10px;
+      }
+
+      .add_button {
+        position: absolute;
+        right: 8px;
+        bottom: 10px;
+      }
+
+    }
+    
+    .img {
+      img {
+        border: 1px solid gray;
+      }
+    }
+
+    .description {
+      width: 80%;
+      margin: 0 auto;
+      font-size: 12px;
+    }
+  }
+
+} 
 
 
 

@@ -1,4 +1,4 @@
-<div id="new-rfp-page-wrapper">
+<div class="rfp-page-wrapper">
   
   <h2 class="signup-header">Create New RFP</h2>
   
@@ -21,7 +21,7 @@
       
       <%= f.fields_for :product do |builder| %>
 
-      <div id="spec-wrapper1">
+      <div class="spec-wrapper1">
         <%= builder.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
       </div>
 

@@ -4,6 +4,7 @@
   <title>FinalProject</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
   <meta charset="UTF-8">
 </head>
@@ -21,7 +22,7 @@
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><a href="/How It Works">How It Works</a></li>
-        <li class="nav-link"><a href="/about">About Us</a></li>
+        <li class="nav-link"><a href="/About">About Us</a></li>
         <% if user_signed_in? %>
           <li class="nav-link"><a href="/Market Deals">Market Deals</a></li>
           <li class="nav-link"><a href="/Create RFP">Create RFP</a></li>
