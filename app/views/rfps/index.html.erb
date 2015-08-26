@@ -12,18 +12,22 @@
         <% end %>
       </div>
 
+  <div class="header-column">
+
+  </div>
+
   <div class="rfp-listing-wrapper">
       
-      <% @rfps.each do |rfp| %>
+      <% @rfps.each do |p| %>
 
-      <%= link_to rfp_path rfp do %>
-      
-      <% end %>
+    <p> <%= p.end_date %> </p>  
+    <p> <%= p.end_date %> </p>
+    <p> <%= p.order_size %> </p>
+
+        
       
       <% end %>
      
-      
-    
   </div>
   
  

@@ -22,44 +22,43 @@
     <div class="field">  
       <%= @rfp.delivery_date %>
     </div>  
-
-  </div> <!-- end of text-field-wrapper -->
     
-  <div class="senior-spec-wrapper">
     <h3 class="spec-header">Specification Information</h3>
   
-    <div class="spec-wrapper1">
-      <%= @rfp.product.commodity %></p>
-    </div>
+    <div class="spec-column-wrapper">
+      <%= render "spec_show" %>
+      <br>
+      <div class="spec-wrapper1">
+        <%= @rfp.product.commodity %>
+      </div>
 
-      <ul>
-        <% for spec in @rfp.product.specs %>
-          <div class="spec-wrapper2">
-            <%= spec.name %>
-          </div>
+          <% for spec in @rfp.product.specs %>
+            <div class="spec-wrapper2">
+              <%= spec.name %>
+            </div>
 
-          <div class="spec-wrapper3">
-            <%= spec.unit %>
-          </div>
+            <div class="spec-wrapper3">
+              <%= spec.unit %>
+            </div>
 
-          <div class="spec-wrapper4">
-            <%= spec.limit %>
-          </div>
+            <div class="spec-wrapper4">
+              <%= spec.limit %>
+            </div>
 
-          <div class="spec-wrapper5">
-            <%= spec.test_method_reference %>
-          </div>
+            <div class="spec-wrapper5">
+              <%= spec.value %>
+            </div>
 
-          <div class="spec-wrapper6">
-            <%= spec.value %>
-          </div>
+            <div class="spec-wrapper6">
+              <%= spec.test_method_reference %>
+            </div>
 
-        <% end %>
-      </ul>
+          <% end %>
+    </div> <!-- end of text-field-wrapper -->
   </div>
 </div>    
 
 <p>
-  <% link_to "Edit", edit_rfp_path(@rfp) %> |
-  <% link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
+  <%= link_to "Edit", edit_rfp_path(@rfp) %> |
+  <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
 </p>
