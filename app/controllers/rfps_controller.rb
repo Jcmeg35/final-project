@@ -9,9 +9,7 @@ class RfpsController < ApplicationController
   def new
     @rfp = Rfp.new
     @product = Product.new
-    @spec = Specs::Density.new name: 'test'
-    @product.specs << @spec
-    @product.save
+    6.times { @product.specs.build }
     @rfp.product = @product
   end
 

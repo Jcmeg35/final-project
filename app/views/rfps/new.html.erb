@@ -31,8 +31,10 @@
 
         <%= builder.fields_for :specs do |builder| %>
 
+
          <%= render 'spec_fields', :f => builder %>
 
+          <% end %>
           <% end %>
   
       <p></p>  
@@ -52,7 +54,5 @@
 
         
       <% end %>
-
-    <% end %>
 
 </div>

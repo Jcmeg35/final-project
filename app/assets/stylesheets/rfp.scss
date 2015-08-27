@@ -58,15 +58,15 @@
     }
     .spec-wrapper2 {
       display: inline-block;
-      @include span-columns(1.5 of 12);
+      @include span-columns(1.7 of 12);
     }
     .spec-wrapper3 {
       display: inline-block;
-      @include span-columns(1.5 of 12);
+      @include span-columns(1.53 of 12);
     }
     .spec-wrapper4 {
       display: inline-block;
-      @include span-columns(1.5 of 12);
+      @include span-columns(1.35 of 12);
     }
     .spec-wrapper5 {
       display: inline-block;
@@ -74,7 +74,7 @@
     }
     .spec-wrapper6 {
       display: inline-block;
-      @include span-columns(3 of 12);
+      @include span-columns(2.65 of 12);
       min-width: 180px;
     }
   }     
