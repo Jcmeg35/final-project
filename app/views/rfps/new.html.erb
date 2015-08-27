@@ -21,8 +21,10 @@
       <div class="spec-field-wrapper2">
         <h3 class="spec-header">Specification Information</h3>
         
-        <%= render "spec_show" %>
-        
+        <div class="col-wrapper">
+          <%= render "spec_show" %>
+        </div>
+
         <div class="product-field-wrapper"> 
           <%= f.fields_for :product do |builder| %>
       

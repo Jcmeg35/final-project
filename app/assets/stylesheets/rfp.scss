@@ -48,17 +48,42 @@
     .spec-header {
       text-align: center;
     }
-    .spec-field-wrapper2{
-      width: 100%;
-      .heading-name{
+    .col-wrapper{
+      @include outer-container(100%);
+      @include span-columns(12); 
+      .col-spec-wrapper1{
         display: inline-block;
+        @include span-columns(1.35  of 10);
       }
+       .col-spec-wrapper2{
+        display: inline-block;
+        @include span-columns(1.7 of 10);
+      }
+      .col-spec-wrapper3{
+        display: inline-block;
+        @include span-columns(1.65 of 10);
+      }
+      .col-spec-wrapper4{
+        display: inline-block;
+        @include span-columns(1.1 of 10);
+      }
+      .col-spec-wrapper5{
+        display: inline-block;
+        @include span-columns(1.05 of 10);
+      }
+      .col-spec-wrapper6{
+        display: inline-block;
+        @include span-columns(2.65 of 10);
+      }
+    }
+    .spec-field-wrapper2{
+      
       @include outer-container(100%);
         .product-field-wrapper{
           @include outer-container(10%);
           @include span-columns(12);   
           .spec-wrapper1 {
-            display: inline-block;
+            // display: inline-block;
             @include span-columns(2 of 12);
             min-width: 125px;
           }
@@ -257,6 +282,7 @@
       font-size: 12px;
     }
   }
+  
 
 } 
 
