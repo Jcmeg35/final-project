@@ -18,26 +18,31 @@
     </div> <!-- end of rfp-wrapper -->
 
     <div class="spec-field-wrapper">
-      <h3 class="spec-header">Specification Information</h3>
-      
-      <%= render "spec_show" %>
+      <div class="spec-field-wrapper2">
+        <h3 class="spec-header">Specification Information</h3>
+        
+        <%= render "spec_show" %>
+        
+        <div class="product-field-wrapper"> 
+          <%= f.fields_for :product do |builder| %>
       
 
-      <%= f.fields_for :product do |builder| %>
+          <div class="spec-wrapper1">
+            <%= builder.text_field :commodity, :required => true,  placeholder: "ex. Diesel*" %>
+          </div>
+        </div>
 
-      <div class="spec-wrapper1">
-        <%= builder.text_field :commodity, :required => true,  placeholder: "ex. Diesel*" %>
+        <div class="jr-spec-field-wrapper">
+          <%= builder.fields_for :specs do |builder| %>
+
+
+           <%= render 'spec_fields', :f => builder %>
+
+           <% end %>
+          <% end %>
+        </div>
       </div>
-
-        <%= builder.fields_for :specs do |builder| %>
-
-
-         <%= render 'spec_fields', :f => builder %>
-
-          <% end %>
-          <% end %>
-  
-      <p></p>  
+    </div>
 
      </div> <!-- end of spec field div -->
     </div> <!-- end of senior-spec-wrapper -->

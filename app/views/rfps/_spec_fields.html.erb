@@ -1,6 +1,19 @@
-<div class="text">
   <div class="spec-wrapper2">
-    <%= f.text_field :name, :required => true,  placeholder: "ex. Sulfur*" %>
+    <%= f.select :type, [["Density at 15C", "Specs::Density"],
+                        ["Viscosity at 40C", "Specs::Viscosity"],
+                        ["Flash point at 40C", "Specs::Flash_point"],
+                        ["Pour point", "Specs::Pour_point"],
+                        ["Sulfur", "Specs::Sulfur"],
+                        ["Cetane index", "Specs::Cetane_index"],
+                        ["Carbon residue", "Specs::Carbon_residue"],
+                        ["Ash %", "Specs::Ash"],
+                        ["Water", "Specs::Water"],
+                        ["Sulfur", "Specs::Vanadium"],
+                        ["Aluminum + silicon", "Specs::Aluminum_plus_silicon"],
+                        ["Zinc", "Specs::Zinc"],
+                        ["Phosphorus", "Specs::Phosphorus"],
+                        ["Calcium", "Specs::Calcium"]] %>
+    </select>
   </div>
 
   <div class="spec-wrapper3">
@@ -19,7 +32,8 @@
   <div class="spec-wrapper6">
     <%= f.text_field :test_method_reference, :required => true,  placeholder: "ex. ISO 3016)*" %>
   </div>
-
+<br>
+<br>
 <!-- 
   # autocomplete :rfp, :order_size
    
@@ -35,4 +49,4 @@
   #     @rfp = Rfp.paginate(page: params[:page], per_page: 30)
   #   end
   # end -->
-</div>
+
