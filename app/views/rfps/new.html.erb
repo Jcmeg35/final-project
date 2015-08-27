@@ -3,26 +3,30 @@
   <h2 class="signup-header">Create New RFP</h2>
   
   <div class="text-field-wrapper">
+  
+    <div class="rfp-field-wrapper"> 
+      <h3 class="spec-header">RFP Information</h3>
 
-    <h3 class="spec-header">RFP Information</h3>
+      <%= form_for @rfp do |f| %>
+        
+        <%= f.text_field :end_date, :required => true, placeholder: "RFP Ending Date (MM/DD/YYYY)*" %>
+        <%= f.text_field :order_size, :required => true, placeholder: "Cargo Size*" %>
+        <%= f.text_field :contract_length, :required => true, placeholder: "Term of Contract" %>
+        <%= f.text_field :delivery_frequency, :required => true, placeholder: "# of Deliverys Over Contract Term*" %>
+        
+        <%= f.text_field :delivery_date, :required => true, placeholder: "Supply Start Date (MM/DD/YYYY)*"  %>
+    </div> <!-- end of rfp-wrapper -->
 
-    <%= form_for @rfp do |f| %>
-      
-      <%= f.text_field :end_date, :required => true, placeholder: "RFP Ending Date (MM/DD/YYYY)*" %>
-      <%= f.text_field :order_size, :required => true, placeholder: "Cargo Size*" %>
-      <%= f.text_field :contract_length, :required => true, placeholder: "Term of Contract" %>
-      <%= f.text_field :delivery_frequency, :required => true, placeholder: "Number of Deliverys Over Contract Term*" %>
-      
-      <%= f.text_field :delivery_date, :required => true, placeholder: "Supply Start Date (MM/DD/YYYY)*"  %>
-  </div> <!-- end of text-field-wrapper -->
-
-  <div class="senior-spec-wrapper">
+    <div class="spec-field-wrapper">
       <h3 class="spec-header">Specification Information</h3>
       
+      <%= render "spec_show" %>
+      
+
       <%= f.fields_for :product do |builder| %>
 
       <div class="spec-wrapper1">
-        <%= builder.text_field :commodity, :required => true,  placeholder: "Product (ex. Diesel)*" %>
+        <%= builder.text_field :commodity, :required => true,  placeholder: "ex. Diesel*" %>
       </div>
 
         <%= builder.fields_for :specs do |builder| %>
@@ -33,8 +37,9 @@
   
       <p></p>  
 
-    </div> <!-- end of forms div -->
-  </div> <!-- end of senior-spec-wrapper -->
+     </div> <!-- end of spec field div -->
+    </div> <!-- end of senior-spec-wrapper -->
+  </div> <!-- end of text-field-wrapper -->
 
   <div id="final-wrapper">
     <h5 id="required">*Required field</h>

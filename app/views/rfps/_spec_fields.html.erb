@@ -1,9 +1,10 @@
+<div class="text">
   <div class="spec-wrapper2">
-    <%= f.text_field :name, :required => true,  placeholder: "Characteristic (ex. Sulfur)*" %>
+    <%= f.text_field :name, :required => true,  placeholder: "ex. Sulfur*" %>
   </div>
 
   <div class="spec-wrapper3">
-    <%= f.text_field :unit, :required => true,  placeholder: "Unit (ex. kg/m3, ℃, etc.)*" %>
+    <%= f.text_field :unit, :required => true,  placeholder: "ex. Celcius*" %>
   </div>
 
   <div class="spec-wrapper4">
@@ -11,12 +12,12 @@
   </div>
 
   <div class="spec-wrapper5">
-    <%= f.text_field :value, :required => true,  placeholder: "Value (ex. 3.50)*" %>
+    <%= f.text_field :value, :required => true,  placeholder: "ex. 3.50*" %>
     <%= f.hidden_field :type %>
   </div>
 
   <div class="spec-wrapper6">
-    <%= f.text_field :test_method_reference, :required => true,  placeholder: "Test Method (ex. ISO 3016)*" %>
+    <%= f.text_field :test_method_reference, :required => true,  placeholder: "ex. ISO 3016)*" %>
   </div>
 
 <!-- 
@@ -34,4 +35,4 @@
   #     @rfp = Rfp.paginate(page: params[:page], per_page: 30)
   #   end
   # end -->
-
+</div>
