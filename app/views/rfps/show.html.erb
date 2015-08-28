@@ -2,33 +2,35 @@
 
   <h2 class="signup-header"> Active RFP</h2>
 
-  <div class="text-field-wrapper">
+  <div class="show-field-wrapper">
   
     <div class="rfp-table-wrapper">  
       <h3 class="spec-header">RFP Information</h3>
       
       <%= render "rfp_show" %>
 
-      <div class="rfp-wrapper1">
-        <%= @rfp.end_date %>
-      </div>     
+      <div class="rfp-column2-wrapper">
+        <div class="rfp-wrapper1">
+          <%= @rfp.end_date %>
+        </div>     
 
-      <div class="rfp-wrapper1">
-        <%= @rfp.order_size %>
-      </div>      
-     
-      <div class="rfp-wrapper1">
-        <%= @rfp.contract_length %>
-      </div>
-      
-      <div class="rfp-wrapper1">
-        <%= @rfp.delivery_frequency %>
-      </div>
-      
-      <div class="rfp-wrapper1">  
-        <%= @rfp.delivery_date %>
-      </div>  
-    </div>
+        <div class="rfp-wrapper1">
+          <%= @rfp.order_size %>
+        </div>      
+       
+        <div class="rfp-wrapper1">
+          <%= @rfp.contract_length %>
+        </div>
+        
+        <div class="rfp-wrapper1">
+          <%= @rfp.delivery_frequency %>
+        </div>
+        
+        <div class="rfp-wrapper1">  
+          <%= @rfp.delivery_date %>
+        </div>  
+      </div> <!-- End of rfp-column2-wrapper -->
+    </div> <!-- End of rfp-table-wrapper -->
 
     <div class="spec-table-wrapper">  
       <h3 class="spec-header">Specification Information</h3>

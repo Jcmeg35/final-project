@@ -10,8 +10,8 @@
       <%= form_for @rfp do |f| %>
         
         <%= f.text_field :end_date, :required => true, placeholder: "RFP Ending Date (MM/DD/YYYY)*" %>
-        <%= f.text_field :order_size, :required => true, placeholder: "Cargo Size*" %>
-        <%= f.text_field :contract_length, :required => true, placeholder: "Term of Contract" %>
+        <%= f.text_field :order_size, :required => true, placeholder: "Cargo Size (ktons)*" %>
+        <%= f.text_field :contract_length, :required => true, placeholder: "Term of Contract (months)" %>
         <%= f.text_field :delivery_frequency, :required => true, placeholder: "# of Deliverys Over Contract Term*" %>
         
         <%= f.text_field :delivery_date, :required => true, placeholder: "Supply Start Date (MM/DD/YYYY)*"  %>
@@ -44,19 +44,16 @@
           <% end %>
         </div>
       </div>
-    </div>
-
-     </div> <!-- end of spec field div -->
-    </div> <!-- end of senior-spec-wrapper -->
+    </div><!-- end of spec field wrapper -->
   </div> <!-- end of text-field-wrapper -->
 
-  <div id="final-wrapper">
-    <h5 id="required">*Required field</h>
+  <div class="final-wrapper">
+    <h5 class="required">*Required field</h>
     
       <div class="actions">
        <%= f.submit "Create RFP" %>
       </div>
-  
+    </div>
   </div> 
 
         

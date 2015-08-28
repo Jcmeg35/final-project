@@ -30,14 +30,6 @@
     .spec-header {
       text-align: center;
     }
-    .rfp-wrapper2 {
-      display: inline-block;
-      @include span-columns(6 of 12);
-    }
-    .rfp-wrapper2 {
-      display: inline-block;
-      @include span-columns(6 of 12);
-    }
   } 
 
   .spec-field-wrapper{
@@ -122,38 +114,42 @@
 }
 
 .final-wrapper {
-  margin-left: 575px;
-  #required {
+  width: 200px;
+  margin-left: 1196px;
+  .required {
     font-weight: lighter;
+    color: black;
+    width: 200px;
+  }
+  .actions{
+    width: 200px;
   }
 }
 
 //Show an RFP
-.text-field-wrapper {
+
+.show-field-wrapper {
+  @include outer-container(100%);
   input {
-    width: 90%;
     padding-right: 0px;
     border: 1px solid black;
   }
-  @include outer-container(100%);
   .rfp-table-wrapper{
-    margin-left: 260px; 
     float: left;  
     border: 1px solid black;
-  @include outer-container(20%);
+    @include span-columns(12);
+    @include outer-container(30%);
     .spec-header {
       text-align: center;
     }
-    .rfp-table-wrapper{
-      @include span-columns(12);
-    }
     .rfp-wrapper2 {
       display: inline-block;
-      @include span-columns(6 of 12);
+      @include span-columns(8 of 12);
     }
-    .rfp-wrapper2 {
+    .rfp-wrapper1 {
       display: inline-block;
-      @include span-columns(6 of 12);
+      @include span-columns(4 of 12);
+      max-width: 60px;
     }
   } 
 
