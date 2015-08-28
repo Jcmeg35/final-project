@@ -1,4 +1,4 @@
 
-class Specs::carbon_residue < Spec
-
+class Specs::Carbon_residue < Spec
+  
 end

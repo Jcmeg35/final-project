@@ -1,4 +1,4 @@
 
-class Specs::Pour_point < Spec
-
+class Specs::Pour_point < Spec 
+  
 end

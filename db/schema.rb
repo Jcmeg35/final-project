@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821185926) do
+ActiveRecord::Schema.define(version: 20150828161504) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal  "price",      null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150821185926) do
 
   create_table "specs", force: :cascade do |t|
     t.string   "type",                  null: false
-    t.string   "name",                  null: false
+    t.string   "name"
     t.string   "unit"
     t.string   "limit"
     t.string   "test_method_reference"

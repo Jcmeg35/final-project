@@ -45,11 +45,11 @@
       @include span-columns(12); 
       .col-spec-wrapper1{
         display: inline-block;
-        @include span-columns(1.35  of 10);
+        @include span-columns(1.45  of 10);
       }
        .col-spec-wrapper2{
         display: inline-block;
-        @include span-columns(1.7 of 10);
+        @include span-columns(1.70 of 10);
       }
       .col-spec-wrapper3{
         display: inline-block;
@@ -83,7 +83,7 @@
         .jr-spec-field-wrapper{
           @include outer-container(90%);
           @include span-columns(10);
-          margin-left: 14px;
+          margin-left: 22px;
           input{
             padding-left: 4px;
           } 
@@ -190,6 +190,13 @@
       min-width: 180px;
     }
   }     
+}
+
+.edit-links {
+  height: 20px;
+  margin: auto;
+  width: 110px;
+  margin-bottom: 20px;
 }
 
 //Explore all RFPs

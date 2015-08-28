@@ -11,7 +11,7 @@
 
       <div class="rfp-column2-wrapper">
         <div class="rfp-wrapper1">
-          <%= nice_date @rfp.end_date %>
+          <%= @rfp.end_date %>
         </div>     
 
         <div class="rfp-wrapper1">
@@ -21,18 +21,14 @@
         <div class="rfp-wrapper1">
           <%= @rfp.contract_length %>
         </div>
-
+        
         <div class="rfp-wrapper1">
           <%= @rfp.delivery_frequency %>
         </div>
         
         <div class="rfp-wrapper1">  
-          <%= nice_date @rfp.delivery_date %>
+          <%= @rfp.delivery_date %>
         </div>  
-
-        <div class="rfp-wrapper1">
-          <%= @rfp.delivery_type %>
-        </div>
       </div> <!-- End of rfp-table-wrapper -->
     </div> <!-- End of rfp-table-wrapper -->
 
@@ -73,7 +69,7 @@
   </div><!-- end of text-field-wrapper -->
 </div>    
 
-<div class="edit-links">
+<p>
   <%= link_to "Edit", edit_rfp_path(@rfp) %> |
   <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
-</div>
+</p>
