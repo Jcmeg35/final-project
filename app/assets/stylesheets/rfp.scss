@@ -46,6 +46,7 @@
       .col-spec-wrapper1{
         display: inline-block;
         @include span-columns(1.45  of 10);
+        width: 160px;
       }
        .col-spec-wrapper2{
         display: inline-block;
@@ -66,10 +67,10 @@
       .col-spec-wrapper6{
         display: inline-block;
         @include span-columns(2.65 of 10);
+        width: 100px;
       }
     }
     .spec-field-wrapper2{
-      
       @include outer-container(100%);
         .product-field-wrapper{
           @include outer-container(10%);
@@ -106,7 +107,6 @@
           .spec-wrapper6 {
             display: inline-block;
             @include span-columns(2.65 of 10);
-            min-width: 180px;
           }
         }
       }
@@ -129,6 +129,8 @@
 //Show an RFP
 
 .show-field-wrapper {
+  margin-left: 500px;
+  width: 1000px;
   @include outer-container(100%);
   input {
     padding-right: 0px;
@@ -136,67 +138,50 @@
   }
   .rfp-table-wrapper{
     float: left;  
-    border: 1px solid black;
-    @include span-columns(12);
-    @include outer-container(30%);
+    width: 360px;
+    color: black;
+    @include outer-container(40%);
     .spec-header {
-      text-align: center;
+     text-align: center;
+     color: #2a3440;
     }
     .rfp-wrapper2 {
-      display: inline-block;
       @include span-columns(8 of 12);
+      min-width: 180px;
+      font-weight: bold;
     }
     .rfp-wrapper1 {
-      display: inline-block;
       @include span-columns(4 of 12);
-      max-width: 60px;
+      max-width: 100px;
     }
   } 
 
   .spec-table-wrapper{
-    border: 1px solid black;
-    display: inline-block;
     width: 50%;
-    @include outer-container(50%);
-    margin-left: 20px;
-    .spec-header {
-      text-align: center;
+    @include outer-container(40%);
+    @include span-columns(12);
+    margin-left: 40px;
+    .spec-header2 {
+      padding-left: 100px;
+      color: #2a3440;
     }
-    .spec-table-wrapper{
-      @include span-columns(12);
+    .col-spec-show-wrapper1{
+      @include span-columns(6 of 12);
+      max-width: 180px;
     }
-    .spec-wrapper1 {
-      display: inline-block;
-    }
-    .spec-wrapper2 {
-      display: inline-block;
-      @include span-columns(1.5 of 12);
-    }
-    .spec-wrapper3 {
-      display: inline-block;
-      @include span-columns(1.5 of 12);
-    }
-    .spec-wrapper4 {
-      display: inline-block;
-      @include span-columns(1.5 of 12);
-    }
-    .spec-wrapper5 {
-      display: inline-block;
-      @include span-columns(1.5 of 12);
-    }
-    .spec-wrapper6 {
-      display: inline-block;
-      @include span-columns(4 of 12);
-      min-width: 180px;
+    .spec-show-wrapper1 {
+      @include span-columns(6 of 12);
+      max-width: 175px;
     }
   }     
 }
 
 .edit-links {
   height: 20px;
-  margin: auto;
   width: 110px;
+  margin: auto;
   margin-bottom: 20px;
+  color: #2a3440;
 }
 
 //Explore all RFPs

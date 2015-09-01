@@ -1,7 +1,5 @@
 class RfpsController < ApplicationController
 
-   
-
   def index
     @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 20)
   end
@@ -23,9 +21,6 @@ class RfpsController < ApplicationController
   end
 
   def edit
-    unless current_user && current_user.admin?
-       redirect_to(rfp_path(params[:id])) and return
-    end
     @rfp = Rfp.find(params[:id])
     @spec = Spec.all
 
@@ -34,6 +29,10 @@ class RfpsController < ApplicationController
   def show
     @rfp = Rfp.find(params[:id])
   end
+
+  def destroy
+    
+  end  
 
   private
 

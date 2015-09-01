@@ -20,12 +20,17 @@
   }
 
   .copy {
-    @include transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -250%));
     left: 50%;
     margin: auto;
     position: absolute;
     text-align: center;
     top: 50%;
+    
+    h1 {
+      color: black;
+      font-size: 38px;
+    }
 
     p {
       color: white;
