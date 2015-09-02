@@ -48,7 +48,7 @@
         @include span-columns(1.45  of 10);
         width: 160px;
       }
-       .col-spec-wrapper2{
+      .col-spec-wrapper2{
         display: inline-block;
         @include span-columns(1.70 of 10);
       }
@@ -157,23 +157,76 @@
   } 
 
   .spec-table-wrapper{
-    width: 50%;
-    @include outer-container(40%);
+    @include outer-container(57%);
     @include span-columns(12);
     margin-left: 40px;
     .spec-header2 {
       padding-left: 100px;
       color: #2a3440;
     }
-    .col-spec-show-wrapper1{
-      @include span-columns(6 of 12);
-      max-width: 180px;
+    .col-spec-show-wrapper1 {
+      @include outer-container(100%);
+      @include span-columns(12); 
+      .col-spec-show-wrapper2 {
+        display: inline-block;
+        @include span-columns(1.5  of 12);
+        max-width: 130px;
+      }
+      .col-spec-show-wrapper3 {
+        display: inline-block;
+        @include span-columns(2.5 of 12);
+      }
+      .col-spec-show-wrapper4 {
+        display: inline-block;
+        @include span-columns(1.0 of 12);
+      }
+      .col-spec-show-wrapper5 {
+        display: inline-block;
+        @include span-columns(1.0 of 12);
+      }
+      .col-spec-show-wrapper6 {
+        display: inline-block;
+        @include span-columns(1.25 of 12);
+        max-width: 200px;
+      }
+      .col-spec-show-wrapper7 {
+      display: inline-block;
+      @include span-columns(3.0 of 12);
+      width: 200px;
+      }
     }
-    .spec-show-wrapper1 {
-      @include span-columns(6 of 12);
-      max-width: 175px;
+
+    .spec-show-container {
+      @include outer-container(100%);
+      @include span-columns(12); 
+      .spec-show-container1{
+        display: inline-block;
+        @include span-columns(1.5  of 12);
+        width: 130px;
+      }
+      .spec-show-container2{
+        display: inline-block;
+        @include span-columns(2.5 of 12);
+      }
+      .spec-show-container3{
+        display: inline-block;
+        @include span-columns(1.0 of 12);
+      }
+      .spec-show-container4{
+        display: inline-block;
+        @include span-columns(1.0 of 12);
+      }
+      .spec-show-container5{
+        display: inline-block;
+        @include span-columns(1.25 of 12);
+      }
+      .spec-show-container6{
+        display: inline-block;
+        @include span-columns(3.0 of 12);
+        width: 200px;
+      }
     }
-  }     
+  }
 }
 
 .edit-links {

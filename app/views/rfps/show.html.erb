@@ -42,41 +42,43 @@
         
           <%= render "spec_show" %>
         <br>
+          <div class="spec-show-container">
 
-        <div class="spec-show-wrapper1">
-          <%= @rfp.product.commodity %>
-        </div>
+            <div class="spec-show-container1">
+              <%= @rfp.product.commodity %>
+            </div>
 
-            <% for spec in @rfp.product.specs %>
-              <div class="spec-show-wrapper1">
-                
-                <p>
-                  <%= spec.name %>
-                </p>
+              <% for spec in @rfp.product.specs %>
+              
+                <div class="spec-show-container2">
+                  <%= spec.type %>
+                </div>
 
-                <p>
+                <div class="spec-show-container3">
                   <%= spec.unit %>
-                </p>
+                </div>
 
-                <p>
+                <div class="spec-show-container4">
                   <%= spec.limit %>
-                </p>
+                </div>
 
-                <p>
+                <div class="spec-show-container5">
                   <%= spec.value %>
-                </p>
+                </div>
 
-                <p>
+                <div class="spec-show-container6">
                   <%= spec.test_method_reference %>
-                </p>
-              </div>
+                </div>
+            </div>
 
           <% end %>
           
-  </div><!-- end of text-field-wrapper -->
-</div>    
-
-<div class="edit-links">
-  <%= link_to "Edit", edit_rfp_path(@rfp) %> |
-  <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
+    </div><!-- end of text-field-wrapper -->
+  </div>    
 </div>
+  <div class="edit-links">
+    <%= link_to "Edit", edit_rfp_path(@rfp) %> |
+    <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
+  </div>
+
+
