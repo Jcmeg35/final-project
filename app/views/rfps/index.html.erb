@@ -16,17 +16,21 @@
   
   <div class="rfp-listing-wrapper">
     <div class="column">
-      
-       <%= current_user.country %>
-
-            <% @rfps.each do |p| %>
-          
-            <h5> <%= nice_date p.end_date %> </h5>  
-            <h5> <%= nice_date p.delivery_date %> </h5>
-            <h5> <%= p.order_size %> </h5>
+      <div class="rfp">  
+        <div class="heading">
+         <%= current_user.country %>
+    
+          <% @rfps.each do |p| %>
+        
+          <h5> <%= p.commodity %> </h5>
         </div>
-      <% end %>
+
+          <h5> <%= nice_date p.end_date %> </h5>  
+          <h5> <%= nice_date p.delivery_date %> </h5>
+          <h5> <%= p.order_size %> </h5>
+      </div>
     </div>
+      <% end %>
   </div> <!-- End of column -->
 </div> <!-- End of explore-rfp-container -->
 

@@ -2,7 +2,6 @@ class RfpsController < ApplicationController
 
   def index
     @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 20)
-    # @users = R.all
   end
 
   def new

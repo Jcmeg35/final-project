@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   def home
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -12,7 +10,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
+  
   def country_name
     country = ISO3166::Country[country_code]
     country.translations[I18n.locale.to_s] || country.name
@@ -70,7 +68,7 @@ class UsersController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def user_params
-        params[:user]
+        params[:user, :country, :country_name]
       end
 
 end
