@@ -2,6 +2,7 @@ class RfpsController < ApplicationController
 
   def index
     @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 20)
+    # @users = R.all
   end
 
   def new
@@ -14,6 +15,7 @@ class RfpsController < ApplicationController
   def create
     @rfp = Rfp.new(rfp_params)
     if @rfp.save!
+      p "yay"
       redirect_to @rfp, alert: "RFP Successfully created"
     else 
       render :action => new
@@ -50,7 +52,7 @@ class RfpsController < ApplicationController
                                                                                 :unit,
                                                                                 :type,
                                                                                 :value,
-                                                                                :test_method_reference]])
+                                                                                :test_method_reference]]).merge(user_id: current_user.id)
     end
 
 end

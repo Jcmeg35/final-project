@@ -1,12 +1,27 @@
 .signin-page-wrapper {
   width: 300px;
   margin: 50px 0px 0px 575px;
-   .signin-header {
-  text-align: center;
-  margin-top: 30px;
-    } 
 }
 
-#signup-button {
-  margin-left: 575px;
+.signin-header {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 1.4em;
+} 
+
+.signin-button {
+  margin-bottom: 15px;  
+}
+
+.field3 {
+  width: 250px;
+}
+
+.remember-me-label {
+  width: 140px;
+  display: inline-block;
+  font-weight: lighter;
+  .label {
+    font-weight: 400;
+  }
 }

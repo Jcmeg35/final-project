@@ -6,37 +6,32 @@
   <%= devise_error_messages! %>
   <div class="signup-wrapper">  
     <div class="field">
-    
       <%= f.text_field :first_name, placeholder: "First Name", autofocus: true %>
     </div>
 
     <div class="field">
-
       <%= f.text_field :last_name, placeholder: "Last Name" %>
     </div>
 
     <div class="field">
-
       <%= f.text_field :title, placeholder: "Title" %>
     </div>
 
     <div class="field">
-    
       <%= f.text_field :company, placeholder: "Company" %>
     </div>
 
-    <div class="field">
-
-      <%= f.text_field :market_position, placeholder: "Area of Interest" %>
+    <div class="market-interest">
+      <p> <%= f.label "Market Interest"%> </p>
+      <p> <%= f.select(:market_position, options_for_select(["Oil Consumer", "Seller", "Broker"]), { include_blank: true }) %> </p>
     </div>
 
-    <div class="field">
-
-      <%= f.country_select :country_code %>
+    <div class="country">
+     <p> <%= f.label "Country" %> </p>
+     <p> <%= f.country_select :country_code %> </p>
     </div>  
 
-     <div class="field">
-
+    <div class="field">
       <%= f.text_field :city, placeholder: "City" %>
     </div>  
 
@@ -69,11 +64,11 @@
   </div>
 
   
-    <div id="signup-button">
-      <div class="actions">
+    <div class="signup-button1">
+      <div class="submit-signup">
         <%= f.submit "Sign Up" %>
       </div>
-  <% end %>
+        <% end %>
 
       <%= render "devise/shared/links" %>
     </div>

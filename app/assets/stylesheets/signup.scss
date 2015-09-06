@@ -1,22 +1,58 @@
 .signup-page-wrapper {
+  margin-bottom: 40px;
   @include outer-container(50%);
   .signup-header {
   text-align: center;
-  margin-top: 32px;
-    } 
-  input {
- 
-    }
-}
+  margin-top: 46px;
+  font-size: 1.45em;
+  } 
 
-.signup-wrapper {
-  @include span-columns(12);
-  input {
-    @include span-columns(5 of 12);
+  .signup-wrapper {
+    margin-left: 70px;
+    p {
+      margin-right: 0px;
+      width: 290px;
+    }
+
+    @include span-columns(12);
+    .field {
+      @include span-columns(5 of 12);
+    }
+     #user_country_code {
+      margin-bottom: 0px;
+      margin-right: 2px;
+      width: 290px;
+    }
+    
+    .country {
+      width: 290px; 
+      margin-bottom: 3px;
+      @include span-columns(5 of 12);
+      label {
+        font-weight: 400;
+        color: black;
+      }
+    }
+
+    .market-interest {
+      margin-bottom: 0px;
+      margin-right: 2px;
+      height: 72px;
+      @include span-columns(5 of 12);
+      select {
+        width: 290px;
+        margin-bottom: 0px;
+      }
+      label {
+        font-weight: 400;
+        color: black;
+      }
+    }
+
+    .submit-signup {
+      input {
+      margin-left: 325px;
+      }
+    }
   }
 }
-
-#signup-button {
-  position: center;
-}
-

@@ -1,36 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<div id="explore_container">
-
-  <div class="listing_wrapper">
-    <div class="header-text">Search RFP's</div> 
-    <br>
-      <div id="autocomplete_wrapper">
-        <span> Search: </span>
-         <%= form_tag "/rfps", placeholder: 'Search', method: :get, id: "autocomplete" do %>
-          <%= autocomplete_field_tag :rfp_order_size, '', autocomplete_rfp_order_size_rfps_path %>
-        <% end %>
-      </div>
+<div id="explore-rfp-container">
+      <div class="listing-wrapper">
+        <div class="header-text">Search RFPs</div> 
+        <br>
+          <div id="autocomplete-wrapper">
+            <span> Search: </span>
+             <%= form_tag "/rfps", placeholder: 'Search', method: :get, id: "autocomplete" do %>
+              <%= autocomplete_field_tag :rfp_order_size, '', autocomplete_rfp_order_size_rfps_path %>
+            <% end %>
+          </div>
+      </div> <!-- End of Listing-wrapper -->
 
   <div class="header-column">
-    
-  </div>
 
-  <div class="rfp-listing-wrapper">
-      
-      <% @rfps.each do |p| %>
-
-    <p> <%= nice_date p.end_date %> </p>  
-    <p> <%= nice_date p.delivery_date %> </p>
-    <p> <%= p.order_size %> </p>
-
-        
-      
-      <% end %>
-     
   </div>
   
- 
+  <div class="rfp-listing-wrapper">
+    <div class="column">
+      
+       <%= current_user.country %>
 
-</div> <!-- End of Explore_container -->
+            <% @rfps.each do |p| %>
+          
+            <h5> <%= nice_date p.end_date %> </h5>  
+            <h5> <%= nice_date p.delivery_date %> </h5>
+            <h5> <%= p.order_size %> </h5>
+        </div>
+      <% end %>
+    </div>
+  </div> <!-- End of column -->
+</div> <!-- End of explore-rfp-container -->
 
