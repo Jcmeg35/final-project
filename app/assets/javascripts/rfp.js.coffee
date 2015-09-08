@@ -2,5 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-  $('.best_in_place').best_in_place()
+ready = ->
+  $(document).ready(ready)
+  $(document).on('page:load', ready)

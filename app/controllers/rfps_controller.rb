@@ -1,7 +1,8 @@
 class RfpsController < ApplicationController
 
   def index
-    @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 20)
+    @rfps = Rfp.search params[:search]
+    @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 10)
     @rfps = Rfp.all
   end
 
@@ -51,7 +52,7 @@ class RfpsController < ApplicationController
 
     def rfp_params
       end_date = params[:rfp][:end_date]
-      delivery_date = params[:rfp][:end_date]
+      delivery_date = params[:rfp][:delivery_date]
       params[:rfp][:end_date] = Date.strptime(end_date, "%m/%d/%Y")
       params[:rfp][:delivery_date] = Date.strptime(delivery_date, "%m/%d/%Y")
 

@@ -16,12 +16,11 @@
 //= require best_in_place
 //= require turbolinks
 //= require_tree .
-$( document ).ready()
+
 $('#product_name').bind('railsAutocomplete.select', function(event, data){
     window.location = "/products?id=" + data.item.id;
   });
 
-$( document ).ready()
   $('#product_name').submit(function(e) {
     e.preventDefault()
   });

@@ -27,7 +27,7 @@
           <h6 class="index-label"> First Date of Delivery </h6>
           <h6 class="index-content"> <%= nice_date p.delivery_date %> </h6>
           <h6 class="index-label"> Product Volume </h6>
-          <h6 class="index-content"> <%= "#{p.order_size} k ton" %> </h6>
+          <h6 class="index-content"> <%= "#{p.order_size} k tons" %> </h6>
           <div class="view-link"> <%= link_to 'View', rfp_path(p.id) %> </div>
         </div>
       </div>
@@ -35,5 +35,8 @@
     </div>
       
   </div> <!-- End of column -->
+ <div class="text-center"> 
+  <%= will_paginate @rfp %> 
+ </div>
 </div> <!-- End of explore-rfp-container -->
 
