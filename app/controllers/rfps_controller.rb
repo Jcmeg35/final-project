@@ -2,6 +2,7 @@ class RfpsController < ApplicationController
 
   def index
     @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 20)
+    @rfps = Rfp.all
   end
 
   def new
@@ -15,20 +16,30 @@ class RfpsController < ApplicationController
     @rfp = Rfp.new(rfp_params)
     if @rfp.save!
       p "yay"
-      redirect_to @rfp, alert: "RFP Successfully created"
+      redirect_to rfps_path, alert: "RFP Successfully created"
     else 
-      render :action => new
+      flash[:notice] = "Issue craeting RFP. Please try again."
     end
   end
 
   def edit
     @rfp = Rfp.find(params[:id])
     @spec = Spec.all
+  end
 
+  def update
+    @rfp = Rfp.find(params[:id])
+    if @rfp.update_attributes(rfp_params)
+      flash[:notice] = "RFP was successfully updated."
+      redirect_to rfps_path
+    else
+      render :edit
+    end
   end
 
   def show
     @rfp = Rfp.find(params[:id])
+    @bid = Bid.new
   end
 
   def destroy

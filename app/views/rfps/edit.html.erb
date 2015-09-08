@@ -1,75 +1,64 @@
 <div class="rfp-page-wrapper">
-
-  <h2 class="signup-header"> Active RFP</h2>
-
-  <div class="show-field-wrapper">
   
-    <div class="rfp-table-wrapper">  
+  <h2 class="signup-header">Create New RFP</h2>
+  
+  <div class="text-field-wrapper">
+  
+    <div class="rfp-field-wrapper"> 
       <h3 class="spec-header">RFP Information</h3>
+
+      <%= form_for @rfp do |f| %>
+        
+        <%= f.text_field :end_date %>
+        <%= f.text_field :order_size %>
+        <%= f.text_field :contract_length %>
+        <%= f.text_field :delivery_frequency, :required => true, placeholder: "# of Deliverys Over Contract Term*" %>
+        
+        <%= f.text_field :delivery_date, :required => true, placeholder: "Supply Start Date (MM/DD/YYYY)*"  %>
+        <%= f.text_field :delivery_type, :required => true, placeholder: "Shipping Type (ex. FOB)*"  %>
+    </div> <!-- end of rfp-wrapper -->
+
+    <div class="spec-field-wrapper">
+      <div class="spec-field-wrapper2">
+        <h3 class="spec-header">Specification Information</h3>
+        
+        <div class="col-wrapper">
+          <%= render "spec_header" %>
+        </div>
+
+        <div class="product-field-wrapper"> 
+          <%= f.fields_for :product do |builder| %>
       
-      <%= render "rfp_show" %>
 
-      <div class="rfp-column2-wrapper">
-        <div class="rfp-wrapper1">
-          <%= @rfp.end_date %>
-        </div>     
-
-        <div class="rfp-wrapper1">
-          <%= @rfp.order_size %>
-        </div>      
-       
-        <div class="rfp-wrapper1">
-          <%= @rfp.contract_length %>
-        </div>
-        
-        <div class="rfp-wrapper1">
-          <%= @rfp.delivery_frequency %>
-        </div>
-        
-        <div class="rfp-wrapper1">  
-          <%= @rfp.delivery_date %>
-        </div>  
-      </div> <!-- End of rfp-table-wrapper -->
-    </div> <!-- End of rfp-table-wrapper -->
-
-    <div class="spec-table-wrapper">  
-      <h3 class="spec-header">Specification Information</h3>
-      
-        
-          <%= render "spec_show" %>
-        <br>
-
-        <div class="spec-wrapper1">
-          <%= @rfp.product.commodity %>
+          <div class="spec-wrapper1">
+            <%= builder.text_field :commodity, :required => true,  placeholder: "ex. Diesel*" %>
+          </div>
         </div>
 
-            <% for spec in @rfp.product.specs %>
-              <div class="spec-wrapper2">
-                <%= spec.name %>
-              </div>
+        <div class="jr-spec-field-wrapper">
+          <%= builder.fields_for :specs do |builder| %>
 
-              <div class="spec-wrapper3">
-                <%= spec.unit %>
-              </div>
 
-              <div class="spec-wrapper4">
-                <%= spec.limit %>
-              </div>
+           <%= render 'spec_fields', :f => builder %>
 
-              <div class="spec-wrapper5">
-                <%= spec.value %>
-              </div>
-
-              <div class="spec-wrapper6">
-                <%= spec.test_method_reference %>
-              </div>
-
+           <% end %>
           <% end %>
-          
-  </div><!-- end of text-field-wrapper -->
-</div>    
+        </div>
+      </div>
+    </div><!-- end of spec field wrapper -->
+  </div> <!-- end of text-field-wrapper -->
 
-<p>
-  <%= link_to "Edit", edit_rfp_path(@rfp) %> |
-  <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delte RFP?', :method => :delete %> 
-</p>
+  <div class="final-wrapper">
+    <h5 class="required">*Required field</h5>
+    
+      <div class="actions">
+        <%= f.submit :Update%> 
+          <%= button_tag "Cancel", type: :cancel %>
+      </div>
+    </div>
+  </div> 
+
+        
+      <% end %>
+
+</div>

@@ -287,9 +287,6 @@
     @include span-columns(12);
   }
   
-  .rfp:hover {
-    background-color: grey;
-  }
   .rfp {
     text-align: center;
     height: 108px;
@@ -297,7 +294,7 @@
     margin-bottom: 20px;
     border: 2px solid lightgray;
     border-radius: 10px;
-    
+
     .heading {
       text-align: left;
       height: 20px;
@@ -315,18 +312,29 @@
         font-style: italic;
         margin-top: -10px;
       }
-
-      .add_button {
-        position: absolute;
-        right: 8px;
-        bottom: 10px;
-      }
-
     }
     
-    .img {
-      img {
-        border: 1px solid gray;
+    .view-link {
+      right: 100px;
+      bottom: 10px;
+    }
+    
+    .index-content-wrapper {
+      margin-left: 175px; 
+      text-align: left;
+      @include span-columns(8);
+      width: 43%; 
+      .index-label {
+        @include span-columns(4);
+        font-weight: 400;
+        font-size: 0.9em;
+      }
+      .index-content {
+        @include span-columns(4);
+        font-weight: 400;
+        font-size: 0.9em;
+        color: blue;
+
       }
     }
 

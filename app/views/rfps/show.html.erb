@@ -75,11 +75,31 @@
           
     </div><!-- end of text-field-wrapper -->
   </div>    
-</div>
 
   <div class="edit-links">
+    <% if current_user %>
     <%= link_to "Edit", edit_rfp_path(@rfp) %> |
     <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delete RFP?', :method => :delete %> 
+    <% else %>
+    
+    <h6> Total Bids <%= @rfp.where(:price).count %> </h6>
+    
+    <%= form_for @bid do |b| %>
+    
+
+     <%= b.text_field :price, placeholder: "$ USD" %> 
   </div>
+
+     <% end %>
+
+  <div class="actions">
+    <%= f.submit "Submit Bid" %>
+  </div>
+    <% end %>
+    
+   
+</div><!-- end of rfp-page-wrapper -->
+
+  
 
 
