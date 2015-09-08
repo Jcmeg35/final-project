@@ -127,9 +127,22 @@
 }
 
 //Show an RFP
+.rfp-show-wrapper {
+  margin-left: 100px;
+  margin-top: 22px; 
+  height: 600px; 
+  padding-top: 20px;
+}
+
+.rfp-show-header {
+  margin-bottom: 32px;
+  font-size: 1.8em;
+  margin-left: 550px;
+}
 
 .show-field-wrapper {
   margin-left: 500px;
+  margin-bottom: 20px;
   width: 1100px;
   @include outer-container(100%);
   input {
@@ -206,7 +219,7 @@
       }
       .spec-show-container2{
         display: inline-block;
-        @include span-columns(2.3 of 12);
+        @include span-columns(2.5 of 12);
       }
       .spec-show-container3{
         display: inline-block;
@@ -218,24 +231,45 @@
       }
       .spec-show-container5{
         display: inline-block;
-        @include span-columns(1.25 of 12);
+        @include span-columns(1.1 of 12);
       }
       .spec-show-container6{
         display: inline-block;
-        @include span-columns(3.0 of 12);
-        width: 200px;
+        @include span-columns(2.5 of 12);
+        width: 100px;
       }
     }
-  }
+  } 
 }
+
+input[type="submit"]{
+  margin-left: 5px;
+} 
 
 .edit-links {
   height: 20px;
   width: 110px;
   margin: auto;
   margin-bottom: 20px;
-  
+  .bid-labels {
+    width: 100px;
+  }
+  .bid-display {
+    font-weight: lighter;
+  }
+}  
+
+.price-input-wrapper {
+  width: 300px;
+  .price-input-wrapper2 {
+  width: 128px;
+  display: inline-block;
+  .bid-label2 {
+    display: inline-block;
+    }
+  }
 }
+
 
 //Explore all RFPs
 
@@ -318,33 +352,28 @@
       right: 100px;
       bottom: 10px;
     }
-    
-    .index-content-wrapper {
-      margin-left: 175px; 
-      text-align: left;
-      @include span-columns(8);
-      width: 43%; 
-      .index-label {
-        @include span-columns(4);
-        font-weight: 400;
-        font-size: 0.9em;
-      }
-      .index-content {
-        @include span-columns(4);
-        font-weight: 400;
-        font-size: 0.9em;
-        color: blue;
+  }
 
-      }
+  .index-content-wrapper {
+    margin-left: 175px; 
+    text-align: left;
+    @include span-columns(8);
+    width: 43%; 
+    .index-label {
+      @include span-columns(4);
+      font-weight: 400;
+      font-size: 0.9em;
     }
-
-    .description {
-      width: 80%;
-      margin: 0 auto;
-      font-size: 12px;
+    .index-content {
+      @include span-columns(4);
+      font-weight: 400;
+      font-size: 0.9em;
+      color: blue;
     }
   }
 }
+
+
 
 
 

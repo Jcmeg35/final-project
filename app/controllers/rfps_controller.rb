@@ -15,10 +15,9 @@ class RfpsController < ApplicationController
   def create
     @rfp = Rfp.new(rfp_params)
     if @rfp.save!
-      p "yay"
       redirect_to rfps_path, alert: "RFP Successfully created"
     else 
-      flash[:notice] = "Issue craeting RFP. Please try again."
+      flash[:notice] = "Issue creating RFP. Please try again."
     end
   end
 
@@ -39,7 +38,9 @@ class RfpsController < ApplicationController
 
   def show
     @rfp = Rfp.find(params[:id])
+    @bids = Bid.all
     @bid = Bid.new
+  
   end
 
   def destroy

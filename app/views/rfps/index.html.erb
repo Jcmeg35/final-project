@@ -1,27 +1,24 @@
 <div id="explore-rfp-container">
-      <div class="listing-wrapper">
-        <div class="header-text">Search RFPs</div> 
-        <br>
-          <div id="autocomplete-wrapper">
-            <span> Search: </span>
-             <%= form_tag "/rfps", placeholder: 'Search', method: :get, id: "autocomplete" do %>
-              <%= autocomplete_field_tag :rfp_order_size, '', autocomplete_rfp_order_size_rfps_path %>
-            <% end %>
-          </div>
-      </div> <!-- End of Listing-wrapper -->
-
-  <div class="header-column">
-
-  </div>
+  <div class="listing-wrapper">
+    <div class="header-text">Search RFPs</div> 
+    <br>
+      <div id="autocomplete-wrapper">
+        <span> Search: </span>
+         <%= form_tag "/rfps", placeholder: 'Search', method: :get, id: "autocomplete" do %>
+          <%= autocomplete_field_tag :rfp_order_size, '', autocomplete_rfp_order_size_rfps_path %>
+        <% end %>
+      </div>
+  </div> <!-- End of Listing-wrapper -->
   
   <div class="rfp-listing-wrapper">
     <div class="column">
-      <div class="rfp">  
-        <div class="heading">
-         <%= current_user.country %>
+
+      <%= current_user.country %>
     
-          <% @rfps.each do |p| %>
-        
+        <% @rfps.each do |p| %>
+      
+      <div class="rfp">
+        <div class="heading">
           <h6> <%= p.product.commodity %> </h6>
         </div>
         <div class="index-content-wrapper">  
@@ -34,9 +31,9 @@
           <div class="view-link"> <%= link_to 'View', rfp_path(p.id) %> </div>
         </div>
       </div>
+      <% end %>
     </div>
       
-      <% end %>
   </div> <!-- End of column -->
 </div> <!-- End of explore-rfp-container -->
 

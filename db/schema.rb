@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828161504) do
+ActiveRecord::Schema.define(version: 20150908151756) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal  "price",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "rfp_id"
-    t.integer  "users_id"
+    t.integer  "user_id"
   end
 
   create_table "products", force: :cascade do |t|

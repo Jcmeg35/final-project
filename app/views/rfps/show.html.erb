@@ -1,6 +1,6 @@
-<div class="rfp-page-wrapper">
+<div class="rfp-show-wrapper">
 
-  <h2 class="signup-header"> Active RFP</h2>
+  <h2 class="rfp-show-header"> Active RFP</h2>
 
   <div class="show-field-wrapper">
   
@@ -69,35 +69,40 @@
                 <div class="spec-show-container6">
                   <%= spec.test_method_reference %>
                 </div>
+                <% end %>
             </div>
-
-          <% end %>
-          
     </div><!-- end of text-field-wrapper -->
   </div>    
 
   <div class="edit-links">
-    <% if current_user %>
+    <% if current_user.id == @rfp.user_id %>
     <%= link_to "Edit", edit_rfp_path(@rfp) %> |
     <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delete RFP?', :method => :delete %> 
     <% else %>
+     
+    <h5 class="bid-labels"> Total Bids: <span class="bid-display"><%=  @bids.count %></span> </h5>
     
-    <h6> Total Bids <%= @rfp.where(:price).count %> </h6>
+    <%= form_for @bid do |f| %>
     
-    <%= form_for @bid do |b| %>
-    
-
-     <%= b.text_field :price, placeholder: "$ USD" %> 
+  <div class="test">
+    <div class="price-input-wrapper"> 
+      <div class="price-input-wrapper2">
+        <span class="bid-label2"> Enter Your Bid </span>  <%= f.text_field :price, :required => true, placeholder: "$ USD*" %> 
+      </div>
+    </div>
   </div>
 
-     <% end %>
-
-  <div class="actions">
-    <%= f.submit "Submit Bid" %>
+  <div class="final-wrapper2">
+    <div class="actions2">
+      <%= f.submit "Submit Bid" %>
+    </div>
   </div>
+  </div>
+    
+    <% end %>
+
     <% end %>
     
-   
 </div><!-- end of rfp-page-wrapper -->
 
   

@@ -1,6 +1,6 @@
   class Rfp < ActiveRecord::Base
   belongs_to :user
-  # has_many :bids
+  has_many :bids
   belongs_to :product
   has_many :specs, :through => :product
 

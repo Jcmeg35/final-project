@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :specs do
   end
   
+  resources :bids do
+  end
+
   devise_for :users, :controllers => { registrations: 'registrations' } 
 
   resources :users, only: [:index, :show, :destroy] 
