@@ -44,10 +44,13 @@
         <br>
           <div class="spec-show-container">
 
-            <div class="spec-show-container1">
-              <%= @rfp.product.commodity %>
-            </div>
+            <div class="product-show-wrapper">
 
+              <div class="spec-show-container1">
+                <%= @rfp.product.commodity %>
+              </div>
+            </div>
+            
               <% for spec in @rfp.product.specs %>
               
                 <div class="spec-show-container2">
@@ -84,19 +87,19 @@
     
     <%= form_for @bid do |f| %>
     
-  <div class="test">
-    <div class="price-input-wrapper"> 
-      <div class="price-input-wrapper2">
-        <span class="bid-label2"> Enter Your Bid </span>  <%= f.text_field :price, :required => true, placeholder: "$ USD*" %> 
+    <div class="test">
+      <div class="price-input-wrapper"> 
+        <div class="price-input-wrapper2">
+          <span class="bid-label2"> Enter Your Bid </span>  <%= f.text_field :price, :required => true, placeholder: "$ USD*" %> 
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="final-wrapper2">
-    <div class="actions2">
-      <%= f.submit "Submit Bid" %>
+    <div class="final-wrapper2">
+      <div class="actions2">
+        <%= f.submit "Submit Bid" %>
+      </div>
     </div>
-  </div>
   </div>
     
     <% end %>

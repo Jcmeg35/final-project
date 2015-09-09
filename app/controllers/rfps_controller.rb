@@ -1,7 +1,6 @@
 class RfpsController < ApplicationController
 
   def index
-    @rfps = Rfp.search params[:search]
     @rfps = Rfp.order(end_date: :desc).paginate(page: params[:page], per_page: 10)
     @rfps = Rfp.all
   end
