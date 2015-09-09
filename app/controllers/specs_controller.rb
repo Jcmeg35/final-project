@@ -13,6 +13,7 @@ class SpecsController < ApplicationController
 
     def set_spec
       @spec = Spec.find(params[:id])
+      spec_type = params[:spec][:type]
     end
 
     def spec_params

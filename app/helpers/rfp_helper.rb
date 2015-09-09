@@ -7,5 +7,4 @@ module RfpHelper
       "INVALID DATE"
     end
   end
-
 end

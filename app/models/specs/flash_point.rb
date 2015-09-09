@@ -1,4 +1,4 @@
 
-class Specs::Flast_point < Spec
+class Specs::Flash_point < Spec
   
 end

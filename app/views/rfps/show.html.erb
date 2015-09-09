@@ -42,7 +42,7 @@
         
           <%= render "spec_show" %>
         <br>
-          <div class="spec-show-container">
+      <div class="spec-show-container">
 
             <div class="product-show-wrapper">
 
@@ -50,11 +50,13 @@
                 <%= @rfp.product.commodity %>
               </div>
             </div>
-            
+
+            <div class="jr-show-field-wrapper">
+
               <% for spec in @rfp.product.specs %>
               
                 <div class="spec-show-container2">
-                  <%= spec.type %>
+                  <%= spec_type(spec) %>
                 </div>
 
                 <div class="spec-show-container3">
@@ -73,40 +75,39 @@
                   <%= spec.test_method_reference %>
                 </div>
                 <% end %>
+            </div> <!-- end of jr-show-field-wrapper -->
+      </div><!-- end of spec-show-container -->
+   
+
+      <div class="edit-links">
+        <% if current_user.id == @rfp.user_id %>
+        <%= link_to "Edit", edit_rfp_path(@rfp) %> |
+        <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delete RFP?', :method => :delete %> 
+        <% else %>
+      
+        <div class="bids-wrapper"> 
+          
+          <%= form_for @bid do |f| %>
+          
+            <div class="price-input-wrapper"> 
+              <div class="price-input-wrapper2">
+                <span class="bid-label"> Enter Your Bid </span>  <%= f.text_field :price, :required => true, placeholder: "$ USD*" %> 
+              </div>
+              <div class="actions2">
+                <%= f.submit "Submit Bid" %>
+              </div>
             </div>
-    </div><!-- end of text-field-wrapper -->
-  </div>    
 
-  <div class="edit-links">
-    <% if current_user.id == @rfp.user_id %>
-    <%= link_to "Edit", edit_rfp_path(@rfp) %> |
-    <%= link_to "Destroy", rfp_path(@rfp), :confirm => 'Are you sure you want to delete RFP?', :method => :delete %> 
-    <% else %>
-     
-    <h5 class="bid-labels"> Total Bids: <span class="bid-display"><%=  @bids.count %></span> </h5>
-    
-    <%= form_for @bid do |f| %>
-    
-    <div class="test">
-      <div class="price-input-wrapper"> 
-        <div class="price-input-wrapper2">
-          <span class="bid-label2"> Enter Your Bid </span>  <%= f.text_field :price, :required => true, placeholder: "$ USD*" %> 
-        </div>
-      </div>
-    </div>
+          <h5 class="bid-label2"> Total Bids: <span class="bid-display"><%=  @bids.count %></span> </h5>
+        </div> <!-- end of bid-wrapper --> 
+      </div> <!-- end of edit-links --> 
+        
+        <% end %>
 
-    <div class="final-wrapper2">
-      <div class="actions2">
-        <%= f.submit "Submit Bid" %>
-      </div>
-    </div>
-  </div>
-    
-    <% end %>
-
-    <% end %>
-    
-</div><!-- end of rfp-page-wrapper -->
+        <% end %>
+    </div><!-- end of spec-table-wrapper -->   
+  </div><!-- end of show-field-wrapper -->     
+</div><!-- end of rfp-show-wrapper -->
 
   
 
